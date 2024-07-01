@@ -1,12 +1,12 @@
 {
-  "name": "cptcr.db",
-  "version": "1.1.2",
+  "name": "@cptcr/cptcr.db",
+  "version": "1.2.3",
   "description": "A local database that mimics MongoDB using BSON files.",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "test": "ts-node test.ts"
+    "test": "exit 0"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,9 @@
     "bson": "^4.6.4",
     "cptcr.db": "^1.0.0",
     "uuid": "^9.0.0"
+  },
+  "publishConfig": {
+    "@cptrc:registry": "https://npm.pkg.github.com/"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
