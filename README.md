@@ -7,13 +7,13 @@ A local database that mimics MongoDB using BSON files. This library provides a s
 
 You can install the package via npm:
 
-\`\`\`sh
+```sh
 npm install cptcr.db
-\`\`\`
+```
 
 ## Project Structure
 
-\`\`\`
+```
 cptcr.db/
 ├── dist/
 ├── node_modules/
@@ -28,7 +28,7 @@ cptcr.db/
 ├── package.json
 ├── tsconfig.json
 └── README.md
-\`\`\`
+```
 
 ## Usage
 
@@ -38,7 +38,7 @@ cptcr.db/
 
 Create a schema to define the structure of your documents.
 
-\`\`\`typescript
+```typescript
 import { Schema } from 'cptcr.db';
 
 const userSchema = new Schema({
@@ -46,79 +46,79 @@ const userSchema = new Schema({
     age: 'number',
     email: 'string'
 });
-\`\`\`
+```
 
 #### Initialize the Database
 
 Initialize the database and create a model.
 
-\`\`\`typescript
+```typescript
 import { Database } from 'cptcr.db';
 
 const db = new Database('./data');
 const User = db.model('User', userSchema);
-\`\`\`
+```
 
 #### Insert a Document
 
 Insert a document into the collection.
 
-\`\`\`typescript
+```typescript
 const newUser = { name: 'John Doe', age: 30, email: 'john@example.com' };
 const insertedUser = User.insert(newUser);
 console.log('Inserted user:', insertedUser);
-\`\`\`
+```
 
 #### Query Documents
 
 Find documents in the collection.
 
-\`\`\`typescript
+```typescript
 const foundUsers = User.find({ name: 'John Doe' });
 console.log('Found users:', foundUsers);
-\`\`\`
+```
 
 #### Update a Document
 
 Update a document in the collection.
 
-\`\`\`typescript
+```typescript
 const updatedCount = User.update({ name: 'John Doe' }, { age: 31 });
 console.log('Updated users count:', updatedCount);
-\`\`\`
+```
 
 #### Delete a Document
 
 Delete a document from the collection.
 
-\`\`\`typescript
+```typescript
 const deletedCount = User.delete({ name: 'John Doe' });
 console.log('Deleted users count:', deletedCount);
-\`\`\`
+```
 
 #### Count Documents
 
 Count documents in the collection.
 
-\`\`\`typescript
+```typescript
 const userCount = User.count({ name: 'John Doe' });
 console.log('User count:', userCount);
-\`\`\`
+```
 
 #### Distinct Values
 
 Get distinct values of a field in the collection.
 
-\`\`\`typescript
+```typescript
 const distinctAges = User.distinct('age');
 console.log('Distinct ages:', distinctAges);
-\`\`\`
+```
 
 #### Find by ID
 
 Find a document by its ID.
 
-\`\`\`typescript
+```typescript
 if (insertedUser._id) {
     const foundUser = User.findById(insertedUser._id);
     console.log('Found user by ID:', foundUser);
@@ -133,16 +133,16 @@ if (insertedUser._id) {
 } else {
     console.error('Inserted user does not have an _id.');
 }
-\`\`\`
+```
 
 #### Set Custom File Path
 
 Set a custom file path for the collection.
 
-\`\`\`typescript
+```typescript
 User.setFilePath('./data/customUsers.bson');
 console.log('Custom file path set.');
-\`\`\`
+```
 
 ### JavaScript
 
@@ -152,7 +152,7 @@ While this library is primarily written in TypeScript, you can also use it in a 
 
 Create a schema to define the structure of your documents.
 
-\`\`\`javascript
+```javascript
 const { Schema } = require('cptcr.db');
 
 const userSchema = new Schema({
@@ -160,79 +160,79 @@ const userSchema = new Schema({
     age: 'number',
     email: 'string'
 });
-\`\`\`
+```
 
 #### Initialize the Database
 
 Initialize the database and create a model.
 
-\`\`\`javascript
+```javascript
 const { Database } = require('cptcr.db');
 
 const db = new Database('./data');
 const User = db.model('User', userSchema);
-\`\`\`
+```
 
 #### Insert a Document
 
 Insert a document into the collection.
 
-\`\`\`javascript
+```javascript
 const newUser = { name: 'John Doe', age: 30, email: 'john@example.com' };
 const insertedUser = User.insert(newUser);
 console.log('Inserted user:', insertedUser);
-\`\`\`
+```
 
 #### Query Documents
 
 Find documents in the collection.
 
-\`\`\`javascript
+```javascript
 const foundUsers = User.find({ name: 'John Doe' });
 console.log('Found users:', foundUsers);
-\`\`\`
+```
 
 #### Update a Document
 
 Update a document in the collection.
 
-\`\`\`javascript
+```javascript
 const updatedCount = User.update({ name: 'John Doe' }, { age: 31 });
 console.log('Updated users count:', updatedCount);
-\`\`\`
+```
 
 #### Delete a Document
 
 Delete a document from the collection.
 
-\`\`\`javascript
+```javascript
 const deletedCount = User.delete({ name: 'John Doe' });
 console.log('Deleted users count:', deletedCount);
-\`\`\`
+```
 
 #### Count Documents
 
 Count documents in the collection.
 
-\`\`\`javascript
+```javascript
 const userCount = User.count({ name: 'John Doe' });
 console.log('User count:', userCount);
-\`\`\`
+```
 
 #### Distinct Values
 
 Get distinct values of a field in the collection.
 
-\`\`\`javascript
+```javascript
 const distinctAges = User.distinct('age');
 console.log('Distinct ages:', distinctAges);
-\`\`\`
+```
 
 #### Find by ID
 
 Find a document by its ID.
 
-\`\`\`javascript
+```javascript
 if (insertedUser._id) {
     const foundUser = User.findById(insertedUser._id);
     console.log('Found user by ID:', foundUser);
@@ -247,13 +247,13 @@ if (insertedUser._id) {
 } else {
     console.error('Inserted user does not have an _id.');
 }
-\`\`\`
+```
 
 #### Set Custom File Path
 
 Set a custom file path for the collection.
 
-\`\`\`javascript
+```javascript
 User.setFilePath('./data/customUsers.bson');
 console.log('Custom file path set.');
-\`\`\`
+```

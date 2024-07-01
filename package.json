@@ -1,6 +1,6 @@
 {
   "name": "cptcr.db",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "A local database that mimics MongoDB using BSON files.",
   "main": "dist/index.js",
   "scripts": {
