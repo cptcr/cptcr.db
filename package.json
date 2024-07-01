@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "test": "exit 0"
+    "test": "ts-node test.ts"
   },
   "repository": {
     "type": "git",
@@ -18,24 +18,9 @@
     "bson",
     "local-storage"
   ],
-  "author": "Your Name",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/cptcr/local-databaseissues"
-  },
-  "homepage": "https://github.com/cptcr/local-database#readme",
-  "dependencies": {
-    "bson": "^4.6.4",
-    "cptcr.db": "^1.0.0",
-    "uuid": "^9.0.0"
-  },
+  "author": "cptcr",
+  "license": "GPL-3.0-only",
   "publishConfig": {
-    "@cptrc:registry": "https://npm.pkg.github.com/"
-  },
-  "devDependencies": {
-    "@types/node": "^20.0.0",
-    "@types/uuid": "^9.0.1",
-    "ts-node": "^10.0.0",
-    "typescript": "^5.0.0"
+    "registry": "https://npm.pkg.github.com/"
   }
 }
