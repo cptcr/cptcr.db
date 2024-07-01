@@ -1,28 +1,38 @@
 {
-  "name": "toowake.db",
-  "version": "1.0.0",
+  "name": "cptcr.db",
+  "version": "1.1.0",
+  "description": "A local database that mimics MongoDB using BSON files.",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "prepublishOnly": "npm run build"
+    "start": "node dist/index.js",
+    "test": "ts-node test.ts"
   },
-  "dependencies": {
-    "uuid": "^8.3.2"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cptcr/local-database.git"
   },
-  "devDependencies": {
-    "@types/node": "^14.18.63",
-    "typescript": "^4.9.5"
-  },
-  "author": "toowake",
-  "license": "MIT",
   "keywords": [
     "database",
-    "local",
-    "data",
-    "management",
-    "toowake",
-    "fast"
+    "mongodb",
+    "bson",
+    "local-storage"
   ],
-  "description": ""
+  "author": "Your Name",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cptcr/local-databaseissues"
+  },
+  "homepage": "https://github.com/cptcr/local-database#readme",
+  "dependencies": {
+    "bson": "^4.6.4",
+    "cptcr.db": "^1.0.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/uuid": "^9.0.1",
+    "ts-node": "^10.0.0",
+    "typescript": "^5.0.0"
+  }
 }
