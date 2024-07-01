@@ -256,4 +256,8 @@ Set a custom file path for the collection.
 ```javascript
 User.setFilePath('./data/customUsers.bson');
 console.log('Custom file path set.');
+<<<<<<< HEAD
 ```
+=======
+```
+>>>>>>> 2f68223c419d73823cb63f346760fea137105b0c
